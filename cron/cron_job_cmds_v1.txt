@@ -1,0 +1,18 @@
+# Linux Cron jobs
+# Peter R.
+# 2020-04-30
+
+# Crintab format
+# MIN HOUR DOM MON DOW CMD
+# * means every DOM for example
+
+# Create cron job
+crontab -u peter -e 
+
+0 12 * * * /usr/bin/Rscript /home/peter/Documents/georod/cronjob1.R 
+
+# View cron job
+crontab -l
+
+# Stop cron job
+crontab -r
