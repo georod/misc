@@ -1,4 +1,4 @@
-# Import CSV to Postgres with GDAL's ogr2org
+# Import CSV to Postgres with GDAL's ogr2ogr
 - Peter R.
 - 2021-03-27
 
