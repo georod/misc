@@ -1,6 +1,5 @@
 # Import CSV to Postgres with GDAL's ogr2ogr
-- Peter R.
-- 2021-03-27
+- Peter R., 2021-03-27
 
 Let's assume you have a CSV file in utf8 format and you want to import it into Postgres. Run the following using the command line.
 
