@@ -9,5 +9,6 @@ ogr2ogr -f PostgreSQL PG:"host=localhost user=postgres dbname=abc password=p123 
 ```
 
 ### Notes
+- Org2ogr will guess the data types
 - If you do not assign a FID, ogr will automatically create one.
 - The data types created may not be the optimal ones
