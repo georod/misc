@@ -1,7 +1,7 @@
 #============================================
 # CSV to Postgres
 #============================================
-# 2022-08-17
+# 2026-05-09
 # Peter R.
 
 
@@ -70,7 +70,7 @@ pgT1 <- "data1_v1"
 pgSc1 <- "public"
 
 
-dbWriteTable(con1,Id(schema=pgSc1, table=pgT1), d2, overwrite=T, append=F, row.names=FALSE)
+dbWriteTable(con1,Id(schema=pgSc1, table=pgT1), data1, overwrite=T, append=F, row.names=FALSE)
 #dbSendQuery(ALTER TABLE )
 dbExecute(con1, paste0("ALTER TABLE ", pgT1," ADD CONSTRAINT ", pgT1,"_pkey ", "PRIMARY KEY (serial_id)" ) )
 dbExecute(con1, paste0("COMMENT ON TABLE ", pgSc1, ".",pgT1, " IS 'District 2019-2021. Imported by PR on 2022-08-17. [NFHS; 2022-03-01]'"))
