@@ -32,6 +32,9 @@ file1 <- "Districts.csv"
 # Test to make sure the CSV loads correctly
 data1 <- read.csv(paste0(path1,file1))
 
+# add serial id
+data1$sid <- 1:nrow(data1)
+
 
 #----------------------------------------
 # Clean variables for Postgres
@@ -72,7 +75,7 @@ pgSc1 <- "public"
 
 dbWriteTable(con1,Id(schema=pgSc1, table=pgT1), data1, overwrite=T, append=F, row.names=FALSE)
 #dbSendQuery(ALTER TABLE )
-dbExecute(con1, paste0("ALTER TABLE ", pgT1," ADD CONSTRAINT ", pgT1,"_pkey ", "PRIMARY KEY (serial_id)" ) )
+dbExecute(con1, paste0("ALTER TABLE ", pgT1," ADD CONSTRAINT ", pgT1,"_pkey ", "PRIMARY KEY (sid)" ) )
 dbExecute(con1, paste0("COMMENT ON TABLE ", pgSc1, ".",pgT1, " IS 'District 2019-2021. Imported by PR on 2022-08-17. [NFHS; 2022-03-01]'"))
 dbExecute(con1, paste0("GRANT SELECT ON TABLE ", pgT1, " TO rduser_group, pwuser_group"))
 
